@@ -47,7 +47,7 @@ function divide(x, y) {
 }
 
 function sonIguales(x, y) {
-  if (x == y) {
+  if (x === y) {
     return true;
   } else {
     return false;
@@ -55,7 +55,7 @@ function sonIguales(x, y) {
 }
 
 function tienenMismaLongitud(str1, str2) {
-  if (str1.length() == str2.length()) {
+  if (str1.length() === str2.length()) {
     return true;
   } else {
     return false;
@@ -83,7 +83,7 @@ function obtenerResto(x, y) {
 }
 
 function esPar(num) {
-  if (num % 2 == 0) {
+  if (num % 2 === 0) {
     return true;
   } else {
     return false;
@@ -91,7 +91,7 @@ function esPar(num) {
 }
 
 function esImpar(num) {
-  if (num % 2 != 0) {
+  if (num % 2 !== 0) {
     return true;
   } else {
     return false;
@@ -123,7 +123,7 @@ function numeroRandom() {
 }
 
 function esPositivo(numero) {
-if (numero == 0) {
+if (numero === 0) {
   return false;
 } else {
   if (numero > 0) {
@@ -177,7 +177,7 @@ function esVocal(letra){
   } else {
     element = [a, e, i, o, u];
     array.forEach(element => {      
-      if (letra == element) {
+      if (letra === element) {
         console.log('Es vocal');
       } else {
         console.log('Dato incorrecto');
