@@ -26,8 +26,7 @@ const nuevoModulo = 21 % 5 === 1;
 // No cambies los nombres de las funciones.
 
 function devolverString(str) {
-  var assistant = console.log(str);
-  return assistant;
+  return str;
 }
 
 function suma(x, y) {
@@ -35,7 +34,7 @@ function suma(x, y) {
 }
 
 function resta(x, y) {
-  return y - x;
+  return x - y;
 }
 
 function multiplica(x, y) {
@@ -55,11 +54,7 @@ function sonIguales(x, y) {
 }
 
 function tienenMismaLongitud(str1, str2) {
-  if (str1.length() === str2.length()) {
-    return true;
-  } else {
-    return false;
-  }
+  str1.length == str2.length;
 }
 
 function menosQueNoventa(num) {
@@ -127,9 +122,9 @@ if (numero === 0) {
   return false;
 } else {
   if (numero > 0) {
-    return true;
+    return 'Es positivo';
   } else {
-    return false;
+    return 'Es negativo';
   }
 }
 }
@@ -173,16 +168,13 @@ function deEuroAdolar(euro){
 
 function esVocal(letra){
   if (letra.length > 1) {
-    console.log('Dato incorrecto');
+    return 'Dato incorrecto';
   } else {
-    element = [a, e, i, o, u];
-    array.forEach(element => {      
-      if (letra === element) {
-        console.log('Es vocal');
-      } else {
-        console.log('Dato incorrecto');
-      }
-    });
+    if (letra === a || letra === e || letra === i || letra === o || letra === u) {
+      return 'Es vocal'
+    } else {
+      return 'Dato incorrecto'
+    }
   }  
 }
 
