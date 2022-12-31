@@ -54,7 +54,7 @@ function sonIguales(x, y) {
 }
 
 function tienenMismaLongitud(str1, str2) {
-  str1.length == str2.length;
+  str1.length === str2.length;
 }
 
 function menosQueNoventa(num) {
@@ -169,12 +169,11 @@ function deEuroAdolar(euro){
 function esVocal(letra){
   if (letra.length > 1) {
     return 'Dato incorrecto';
+  }
+  if (letra === a || letra === e || letra === i || letra === o || letra === u) {
+    return 'Es vocal'
   } else {
-    if (letra === a || letra === e || letra === i || letra === o || letra === u) {
-      return 'Es vocal'
-    } else {
-      return 'Dato incorrecto'
-    }
+    return 'Dato incorrecto'
   }  
 }
 
