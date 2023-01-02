@@ -1,14 +1,10 @@
 // No cambies los nombres de las funciones.
 
 function obtenerMayor(x, y) {
-  if (x === y) {
-    console.log(x);
+  if (x > y) {
+    return x;
   } else {
-    if (x - y > 0) {
-      console.log(x)
-    } else {
-      console.log(y)
-    }        
+    return y;
   }
   // "x" e "y" son números enteros (int).
   // Devuelve el número más grande
@@ -18,26 +14,23 @@ function obtenerMayor(x, y) {
 
 function mayoriaDeEdad(edad) {
   if (edad < 18) {
-    console.log('Not Allowed')
+    return 'Not allowed';
   } else {
-    console.log('Allowed')
+    return 'Allowed';
   }
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
 }
-  
+
 function conection(status) {
   switch (status) {
     case 1:
-      console.log('Online');
-      break;
+      return 'Online';      
     case 2:
-      console.log('Away');
-      break;  
+      return 'Away'; 
     default:
-      console.log('Offline')
-      break;
+      return 'Offline';
   }
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
   //Cuando el estado es igual a 1, el usuario está "Online"
@@ -49,17 +42,13 @@ function conection(status) {
 function saludo(idioma) {
   switch (idioma) {
     case 'aleman':
-      console.log('Guten Tag!');
-      break;
+      return 'Guten Tag!';
     case 'mandarin':
-      console.log('Ni Hao!');
-      break;
+      return 'Ni Hao!';
     case 'ingles':
-      console.log('Hello!');
-      break; 
+      return 'Hello!'; 
     default:
-      console.log('Hola!')
-      break;
+      return 'Hola!'; 
   }
   // Devuelve un saludo en tres diferentes lenguajes:
   // Si "idioma" es "aleman", devuelve "Guten Tag!"
@@ -72,20 +61,15 @@ function saludo(idioma) {
 function colors(color) {
   switch (color) {
     case 'blue':
-      console.log('This is blue');
-      break;
+      return 'This is blue';
     case 'red':
-      console.log('This is red');
-      break;
+      return 'This is red';
     case 'green':
-      console.log('This is green');
-      break;  
+      return 'This is green';  
     case 'orange':
-      console.log('This is orange');
-      break; 
+      return 'This is orange'; 
     default:
-      console.log('Color not found')
-      break;
+      return 'Color not found';
   }
   //La función recibe un color. Devolver el string correspondiente:
   //En caso que el color recibido sea "blue", devuleve --> "This is blue"
@@ -136,15 +120,15 @@ function esEntero(numero) {
 
 function fizzBuzz(numero) {
   if (numero % 3 === 0 && numero % 5 === 0) {
-    console.log('fizzbuzz')    
+    return 'fizzbuzz';    
   } else {
     if (numero % 3 === 0) {
-      console.log('fizz')
+      return 'fizz';
     } else {
       if (numero % 5 === 0) {
-        console.log('buzz')
+        return 'buzz';
       } else {
-        console.log(numero)
+        return numero;
       }
     }
   }    
@@ -156,17 +140,17 @@ function fizzBuzz(numero) {
 
 function operadoresLogicos(num1, num2, num3) {
   if (num1 === 0 || num2 === 0 || num3 === 0) {
-    console.log('Error');
+    return 'Error';
   } else {
     if (num1 < 0 || num2 < 0 || num3 < 0) {
-      console.log('Hay negativos'); 
+      return 'Hay negativos'; 
     } else {
       if (num1 - num2 > 0 && num1 - num3 > 0) {
-        console.log('Número 1 es mayor y positivo');
+        return 'Número 1 es mayor y positivo';
       } else {
         if (num3 - num1 > 0 && num3 - num2 > 0) {
           num3 += 1;
-          console.log(num3);
+          return num3;
         } else {
           return false;
         }
@@ -183,10 +167,15 @@ function operadoresLogicos(num1, num2, num3) {
 
 
 function esPrimo(numero) {
-  for (let index = 0; index < array.length; index++) {
-    const element = array[index];
-    
+  if( numero < 2) return false;
+  if(numero === 2) return true;
+  for(var i = 2; i < numero; i++) {
+    if(numero % i === 0) {
+      return false;
+    }
   }
+  return true;
+
   // Devuelve "true" si "numero" es primo
   // De lo contrario devuelve "falso"
   // Pista: un número primo solo es divisible por sí mismo y por 1
@@ -195,6 +184,11 @@ function esPrimo(numero) {
 }
 
 function esVerdadero(valor){
+  if (valor === true) {
+    return 'Soy verdadero';
+  } else {
+    return 'Soy falso';
+  }
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
@@ -202,6 +196,11 @@ function esVerdadero(valor){
 }
 
 function tablaDelSeis(){
+  arrayTable6 =  [];
+  for (i = 0; i <= 10; i++){
+    arrayTable6.push(6*i);
+  }
+  return arrayTable6;
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
@@ -209,18 +208,29 @@ function tablaDelSeis(){
 }
 
 function tieneTresDigitos(numero){
+  counter = 0;
+  do {
+    counter += 1;
+    numero /= 10;
+  } while (numero >= 1);
+  if (counter === 3) {
+    return true;
+  } else {
+    return false;
+  }
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
   
 }
 
+
+
 function doWhile(numero) {
   counter = numero;
-  console.log(numero);
   do {
     numero += 5;
-    console.log(numero);
   } while (numero < counter + 40);
+  return numero;
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
